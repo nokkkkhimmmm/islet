@@ -15,6 +15,10 @@ swift test
 Scripts/build-app.sh release && open dist/Islet.app
 ```
 
+Working in Xcode instead? Open `Package.swift` directly, then **set the run destination to
+"My Mac"**. Xcode tends to pick an iOS simulator by default, which fails on macOS-only API with
+errors such as `'homeDirectoryForCurrentUser' is unavailable in iOS`. Nothing here targets iOS.
+
 Read [AGENTS.md](AGENTS.md) before changing anything structural. It documents the invariants
 that are easy to break without noticing — chiefly that the notch is a physical cutout with no
 pixels behind it, and that `IsletCore` must stay free of AppKit and SwiftUI.

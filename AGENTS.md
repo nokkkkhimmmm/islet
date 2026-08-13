@@ -31,6 +31,11 @@ There is no `.xcodeproj`. The project is SwiftPM so that every file is reviewabl
 and CI needs nothing but the command line tools. Xcode can open `Package.swift` directly.
 `Scripts/build-app.sh` exists because SwiftPM emits a bare executable, not an `.app`.
 
+If you open the package in Xcode, **set the run destination to "My Mac"**. Xcode often defaults
+to an iOS simulator, and the build then fails on macOS-only API with errors like
+`'homeDirectoryForCurrentUser' is unavailable in iOS`. Islet is a Mac app; nothing here is
+meant to compile for iOS.
+
 ## Layout
 
 ```
