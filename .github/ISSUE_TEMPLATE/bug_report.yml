@@ -1,0 +1,61 @@
+name: Bug report
+description: Something in Islet is not working
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. The two diagnostic commands below usually identify the problem
+        straight away, so please include them if you can.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what you got instead.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part
+      options:
+        - The island is in the wrong place or the wrong size
+        - A session is missing or shows wrong data
+        - The wrong state is shown (working / your turn / idle)
+        - Token or rate limit numbers look wrong
+        - Crash or hang
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnose
+    attributes:
+      label: Output of --diagnose
+      description: |
+        `dist/Islet.app/Contents/MacOS/Islet --diagnose`
+
+        Needed for anything about position or sizing. Reports your display and notch geometry.
+      render: text
+
+  - type: textarea
+    id: dump
+    attributes:
+      label: Output of --dump-sessions
+      description: |
+        `dist/Islet.app/Contents/MacOS/Islet --dump-sessions`
+
+        ⚠️ This includes workspace paths, branch names and agent message previews from your own
+        sessions. Please read it and redact anything you would rather not publish.
+      render: text
+
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: macOS version, Mac model, and the Codex / Claude Code versions involved.
+      placeholder: "macOS 15.3, MacBook Pro 14in M3 Pro, Codex 0.147.0"
+    validations:
+      required: true

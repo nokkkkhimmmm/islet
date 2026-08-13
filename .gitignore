@@ -1,0 +1,36 @@
+# Swift / SwiftPM
+.build/
+.swiftpm/
+Package.resolved
+*.o
+*.dSYM/
+
+# Build output
+build/
+dist/
+*.app
+*.dmg
+*.zip
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+*.xcuserstate
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local, machine-specific config — never commit
+.env
+.env.local
+Scripts/local-*

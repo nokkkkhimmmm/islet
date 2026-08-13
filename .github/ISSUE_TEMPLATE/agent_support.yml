@@ -1,0 +1,47 @@
+name: Support another agent
+description: Ask for a coding agent other than Codex or Claude Code to be tracked
+labels: [enhancement, agent-support]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Islet reads transcripts that agents already write to disk. Whether a tool can be
+        supported comes down to what it records, so those details matter more than anything.
+
+  - type: input
+    id: tool
+    attributes:
+      label: Which tool
+      placeholder: "name and a link"
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Where does it store sessions
+      placeholder: "~/.some-tool/sessions/"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: records
+    attributes:
+      label: What does the transcript record
+      description: If you are unsure, paste a sample record below and we will work it out.
+      options:
+        - label: Turn boundaries, or something that shows when the agent is mid-turn
+        - label: Token usage
+        - label: The workspace or working directory
+        - label: Rate limit or quota information
+        - label: The model name
+
+  - type: textarea
+    id: sample
+    attributes:
+      label: A sample record
+      description: |
+        One or two lines from a transcript file.
+
+        ⚠️ Redact anything private — these usually contain file paths and message content.
+      render: json
