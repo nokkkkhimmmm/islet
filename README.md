@@ -5,6 +5,15 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/nokkkkhimmmm/islet/actions/workflows/ci.yml">
+    <img src="https://github.com/nokkkkhimmmm/islet/actions/workflows/ci.yml/badge.svg" alt="CI">
+  </a>
+  <img src="https://img.shields.io/badge/platform-macOS%2014%2B-lightgrey" alt="macOS 14+">
+  <img src="https://img.shields.io/badge/swift-6.0-orange" alt="Swift 6.0">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT"></a>
+</p>
+
+<p align="center">
   <a href="#installing">Install</a> ·
   <a href="#what-it-shows">What it shows</a> ·
   <a href="#privacy">Privacy</a> ·
